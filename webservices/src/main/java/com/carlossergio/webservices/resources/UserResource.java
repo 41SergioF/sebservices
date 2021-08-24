@@ -16,7 +16,7 @@ import com.carlossergio.webservices.entities.User;
 public class UserResource {
 	
 	/*Esse método é um EndPoint para acessar os usuários
-	 * */
+	 *Isso é um controlador REST */
 	@GetMapping
 	public ResponseEntity<User> findAll() {
 		User user = new User(1L, "Maria", "maria@gmail.com", "85 98653298", "123456");
