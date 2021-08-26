@@ -20,7 +20,7 @@ public class OrderResource {
 	 * Injeção de dependência
 	 */
 	@Autowired
-	private OrderService userService;
+	private OrderService orderService;
 
 	/*
 	 * Funcionamento do método: A classe OrderResource pede a OrderService todas a
@@ -28,7 +28,7 @@ public class OrderResource {
 	 */
 	@GetMapping
 	public ResponseEntity<List<Order>> findAll() {
-		List<Order> list = userService.findAll();
+		List<Order> list = orderService.findAll();
 
 		return ResponseEntity.ok().body(list);
 	}
@@ -39,7 +39,7 @@ public class OrderResource {
 	 */
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Order> findById(@PathVariable Long id) {
-		Order order = userService.findById(id);
+		Order order = orderService.findById(id);
 		return ResponseEntity.ok().body(order);
 	}
 }
