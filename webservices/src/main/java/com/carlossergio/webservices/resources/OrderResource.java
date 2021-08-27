@@ -13,7 +13,7 @@ import com.carlossergio.webservices.entities.Order;
 import com.carlossergio.webservices.service.OrderService;
 
 @RestController
-@RequestMapping(value = "/order")
+@RequestMapping(value = "/orders")
 public class OrderResource {
 
 	/*
