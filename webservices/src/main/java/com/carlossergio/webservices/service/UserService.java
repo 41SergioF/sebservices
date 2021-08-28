@@ -20,15 +20,18 @@ public class UserService {
 	}
 
 	public User findById(Long id) {
-		Optional<User> optional =  userRepository.findById(id);
+		Optional<User> optional = userRepository.findById(id);
 		/*
-		 * Esse linha retorna o objeto do tipo User contido
-		 * no optional.
+		 * Esse linha retorna o objeto do tipo User contido no optional.
 		 */
 		return optional.get();
 	}
-	
+
 	public User insert(User obj) {
 		return userRepository.save(obj);
+	}
+
+	public void delete(Long id) {
+		userRepository.deleteById(id);
 	}
 }
