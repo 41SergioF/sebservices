@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.IncorrectUpdateSemanticsDataAccessException;
 import org.springframework.stereotype.Service;
 
 import com.carlossergio.webservices.entities.User;
 import com.carlossergio.webservices.repositories.UserRepository;
+import com.carlossergio.webservices.service.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -25,7 +25,7 @@ public class UserService {
 		/*
 		 * Esse linha retorna o objeto do tipo User contido no optional.
 		 */
-		return optional.get();
+		return optional.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 
 	public User insert(User obj) {
